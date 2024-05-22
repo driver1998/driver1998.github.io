@@ -71,4 +71,4 @@ Now you should be able to run programs that uses Vulkan. Here is some screenshot
 
 ## Credits
 
-Prove of concept by [Gustave Monce (gus33000)](https://github.com/gus33000), who ported this to Snapdragon 855 phones.
+Proof of concept by [Gustave Monce (gus33000)](https://github.com/gus33000), who ported this to Snapdragon 855 phones.
