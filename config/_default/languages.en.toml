@@ -1,0 +1,22 @@
+languageCode = "en"
+languageName = "English"
+languageDirection = "ltr"
+weight = 1
+
+title = "DisposableMemory"
+copyright = "© driver1998, licensed under [CC-BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)"
+
+[params]
+dateFormat = "2 January 2006"
+
+# mainSections = ["section1", "section2"]
+# description = "My awesome website"
+
+[params.author]
+name = "driver1998"
+headline = "It works, what now?"
+links = [
+  { email = "mailto:driver1998.ms@outlook.com" },
+  { github = "https://github.com/username" },
+  { x-twitter = "https://twitter.com/driver1998" },
+]
