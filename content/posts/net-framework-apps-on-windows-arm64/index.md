@@ -20,11 +20,11 @@ categories = ['Windows', 'ARM64', '.NET']
 
 因为 .NET 有 AnyCPU 构建方式，在运行时判断当前系统和进程的架构就变得很重要。
 
-如果应用目标是 .NET Framework 4.7.1 或以上，直接读取 [RuntimeInformation.OSArchitecture](https://learn.microsoft.com/zh-cn/dotnet/api/system.runtime.interopservices.runtimeinformation.osarchitecture?view=netframework-4.8.1) 和 [RuntimeInformation.ProcessArchitecture](https://learn.microsoft.com/zh-cn/dotnet/api/system.runtime.interopservices.runtimeinformation.processarchitecture?view=netframework-4.8.1) 即可。
+如果应用目标是 .NET Framework 4.7.1 或以上，直接读取 [`RuntimeInformation.OSArchitecture`](https://learn.microsoft.com/zh-cn/dotnet/api/system.runtime.interopservices.runtimeinformation.osarchitecture?view=netframework-4.8.1) 和 [`RuntimeInformation.ProcessArchitecture`](https://learn.microsoft.com/zh-cn/dotnet/api/system.runtime.interopservices.runtimeinformation.processarchitecture?view=netframework-4.8.1) 即可。
 
 ![如何检测架构](detect-architecture.png)
 
-当然你也可以 P/Invoke 对应的 Windows API，如 [IsWow64Process2](https://learn.microsoft.com/zh-cn/windows/win32/api/wow64apiset/nf-wow64apiset-iswow64process2)、[GetProcessInformation](https://learn.microsoft.com/zh-cn/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocessinformation) 等。
+当然你也可以 P/Invoke 对应的 Windows API，如 [`IsWow64Process2`](https://learn.microsoft.com/zh-cn/windows/win32/api/wow64apiset/nf-wow64apiset-iswow64process2)、[`GetProcessInformation`](https://learn.microsoft.com/zh-cn/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocessinformation) 等。
 
 > 要注意 x64 进程在 ARM64 下虽然是模拟运行，但不在 WOW64 容器内，所以 `IsWow64Process2` 的
 `pProcessMachine` 会返回 `NULL` （与 ARM64 系统下运行 ARM64 进程一致）。\
@@ -86,7 +86,7 @@ Windows 11 22H2 (Nickel, 22621) 之后给 CMD 的 `start` 命令加了个 `/mach
 
 还有没有更给力的方法？起码不用弹控制台？
 
-[CreateProcessEx](https://learn.microsoft.com/zh-cn/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessa) 的 `lpProcessAttributes` 中加了一个新的条目 `PROC_THREAD_ATTRIBUTE_MACHINE_TYPE`，可以指定启动进程的架构。
+[`CreateProcessEx`](https://learn.microsoft.com/zh-cn/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessa) 的 `lpProcessAttributes` 中加了一个新的条目 `PROC_THREAD_ATTRIBUTE_MACHINE_TYPE`，可以指定启动进程的架构。
 
 下面是一段示例代码：
 
