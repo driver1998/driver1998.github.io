@@ -27,7 +27,7 @@ categories = ['Windows', 'ARM64', '.NET']
 当然你也可以 P/Invoke 对应的 Windows API，如 [`IsWow64Process2`](https://learn.microsoft.com/zh-cn/windows/win32/api/wow64apiset/nf-wow64apiset-iswow64process2)、[`GetProcessInformation`](https://learn.microsoft.com/zh-cn/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocessinformation) 等。
 
 > 要注意 x64 进程在 ARM64 下虽然是模拟运行，但不在 WOW64 容器内，所以 `IsWow64Process2` 的
-`pProcessMachine` 会返回 `NULL` （与 ARM64 系统下运行 ARM64 进程一致）。\
+`pProcessMachine` 会返回 `IMAGE_FILE_MACHINE_UNKNOWN` （与 ARM64 系统下运行 ARM64 进程一致）。\
 > 要区分两者，请使用 `GetProcessInformation` 并传入 `ProcessInformationClass = ProcessMachineTypeInfo`，它可以准确判断进程是 x64 还是 ARM64。
 
 然后你就会发现...
