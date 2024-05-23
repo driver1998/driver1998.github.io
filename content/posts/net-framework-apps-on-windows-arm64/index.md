@@ -91,6 +91,7 @@ Windows 11 22H2 (Nickel, 22621) 之后给 CMD 的 `start` 命令加了个 `/mach
 下面是一段示例代码：
 
 ```c
+// SPDX-License-Identifier: MIT
 #define _WIN32_WINNT 0x0A00      // _WIN32_WINNT_WIN10
 #define NTDDI_VERSION 0x0A00000B // NTDDI_WIN10_CO
 
@@ -183,6 +184,6 @@ int main(void) {
 
 `supportedArchitectures` 支持的取值有 `amd64`、`arm64` 以及它们的组合（以空格分隔），一般全填上就行（应该没有谁说不支持 x64 吧）。
 
-这一设计确保哪怕未来 .NET Framework 继续引入新架构支持（比如 RISC-V？），也可以很自然地扩展，不用像 `AnyCPU`、`AnyCPU32BitPreferred` 一样摸棱两可。
+这一设计确保哪怕未来 .NET Framework 继续引入新架构支持（比如 RISC-V？），也可以很自然地扩展，不用像 `AnyCPU`、`AnyCPU32BitPreferred` 一样模棱两可。
 
 只可惜这一方案出现得太晚了，只有目前尚未正式发布的 24H2（26100）才开始支持，离能广泛使用还要等很长一段时间（还好 ARM 没有 LTSC）。

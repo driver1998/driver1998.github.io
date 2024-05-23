@@ -23,7 +23,7 @@ First, we need the GPU driver for Snapdragon X. Luckily [WOA Project](https://gi
 
 Drivers for Snapdragon X are at https://github.com/WOA-Project/Qualcomm-Reference-Drivers/tree/master/8380_CRD .
 
-There are many versions under that path, pick the latest on e(200.0.18.0 at the time of writing), then download `qcdx8380.cab` inside. 
+There are many versions under that path, pick the latest (200.0.18.0 at the time of writing), then download `qcdx8380.cab` inside. 
 
 ## Extract the necessary files
 
