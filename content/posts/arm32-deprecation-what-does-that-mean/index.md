@@ -26,7 +26,7 @@ categories = ['Windows', 'ARM64']
 
 - ARM32 Windows 8.x Metro App，试图安装 ARM32 Windows 8.x appx 包时会提示不兼容。
 
-![alt text](image-3.png)
+![Win8.x Metro 应用禁止安装](win8-arm32-blocked.png)
 
 > 这是我最不解的，ARM32 最大的遗产就是 Windows RT 8.x 时代的 Xbox 游戏啊，这些反而不能安装是闹哪样啊
 
