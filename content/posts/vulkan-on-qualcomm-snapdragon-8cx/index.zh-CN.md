@@ -1,7 +1,7 @@
 +++
 title = '高通骁龙 8cx 上的原生 Vulkan'
 date = 2024-05-23T00:22:48+08:00
-categories = ['Windows', 'ARM64']
+categories = ['Windows', 'ARM64', 'Vulkan']
 +++
 
 骁龙 X 系列终于发布了，新平台的 GPU 驱动终于包含对 Vulkan API 的原生支持。
@@ -22,7 +22,7 @@ categories = ['Windows', 'ARM64']
 
 其中骁龙 X 对应的路径在 https://github.com/WOA-Project/Qualcomm-Reference-Drivers/tree/master/8380_CRD 。
 
-下面有很多个不同的版本，选最新的（本文发布时是 200.0.18.0），然后下载里面的 `qcdx8380.cab`。
+下面有很多个不同的版本，选 200.0.18.0（目前已知能工作的最新版本），然后下载里面的 `qcdx8380.cab`。
 
 ## 解压并提取必要文件
 
@@ -47,16 +47,7 @@ qcvk_icd_arm64x.json
 
 如果你使用的是 24H2（26100），系统应该已经自带了 Vulkan Loader `C:\Windows\system32\vulkan-1.dll`，你可以跳过这一节。
 
-Vulkan 程序使用 Vulkan Loader 加载 Vulkan 驱动，如果你要运行 x64 Vulkan 应用，直接安装 LunarG 的 Vulkan Runtime 即可。
-
-但 LunarG 官网暂时还没有 ARM64 的 Vulkan Loader 二进制下载，目前你可以：
-
-- 自己编译，源码在 https://github.com/KhronosGroup/Vulkan-Loader
-
-- 使用 MSYS2 的二进制包：https://packages.msys2.org/package/mingw-w64-clang-aarch64-vulkan-loader?repo=clangarm64 \
-点击 File 处的链接下载，并用 7-zip 解压 `clangarm64/bin` 下的 `vulkan-1.dll` 
-
-获取到 `vulkan-1.dll` 之后，建议将它直接放在 Vulkan 应用 EXE 的路径下。不要放到 `system32`，以免与 LunarG Vulkan Runtime 安装的 x64 `vulkan-1.dll` 冲突。
+否则，可以直接去安装 LunarG 的 Vulkan Runtime，官网已经提供了 ARM64 版本。
 
 ## 然后就完成了！
 

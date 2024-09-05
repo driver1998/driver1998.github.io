@@ -1,7 +1,7 @@
 +++
 title = 'Native Vulkan on Snapdragon 8cx'
 date = 2024-05-23T00:22:48+08:00
-categories = ['Windows', 'ARM64', '.NET']
+categories = ['Windows', 'ARM64', 'Vulkan']
 +++
 
 
@@ -23,7 +23,7 @@ First, we need the GPU driver for Snapdragon X. Luckily [WOA Project](https://gi
 
 Drivers for Snapdragon X are at https://github.com/WOA-Project/Qualcomm-Reference-Drivers/tree/master/8380_CRD .
 
-There are many versions under that path, pick the latest (200.0.18.0 at the time of writing), then download `qcdx8380.cab` inside. 
+There are many versions under that path, pick 200.0.18.0 (the last known working version), then download `qcdx8380.cab` inside. 
 
 ## Extract the necessary files
 
@@ -48,16 +48,7 @@ Locate to `HKEY_LOCAL_MACHINE\SOFTWARE\Khronos\Vulkan\Drivers` in the registry (
 
 If you are running 24H2 (26100), it should have Vulkan Loader built in at `C:\Windows\system32\vulkan-1.dll`, and you can skip this.
 
-Vulkan programs loads Vulkan drivers via the Vulkan Loader, if you want to run x64 Vulkan apps, simply download and install Vulkan Runtime from LunarG.
-
-But LunarG currently does not have ARM64 binaries of Vulkan Loader available. For now, you can:
-
-- Compile it yourself with the source at https://github.com/KhronosGroup/Vulkan-Loader
-
-- Use binaries from MSYS2: https://packages.msys2.org/package/mingw-w64-clang-aarch64-vulkan-loader?repo=clangarm64 \
-Download with the link listed as "File", extract the package with 7-zip, and get `vulkan-1.dll` from `clangarm64/bin`
-
-You should place `vulkan-1.dll` next to your Vulkan app exe. Do not put it in `system32` to avoid conflicts with the x64 one from LunarG Vulkan Runtime.
+Otherwise, simply download and install Vulkan Runtime from LunarG, ARM64 version is now available.
 
 ## Enjoy!
 
