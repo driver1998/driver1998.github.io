@@ -43,8 +43,8 @@ dotnet publish -r linux-loongarch64 -p:UseAppHost=false
 
 > 注意：
 >
-> 该 tar 文件内部存在符号链接，请使用能正确处理符号链接的解压缩工具。\
-> - 对于 Windows 来说，可以使用 7-zip，但请使用管理员权限运行 7-zip，以正确创建符号链接。\
+> 该 tar 文件内部存在符号链接，请使用能正确处理符号链接的解压缩工具。
+> - 对于 Windows 来说，可以使用 7-zip，但请使用管理员权限运行 7-zip，以正确创建符号链接。
 > - 对于 Linux 来说，使用 tar -xf 即可。
 
 - 根据你的编译机平台从微软官方下载同版本的 .NET SDK，注意要下载 “二进制文件” （即压缩包），而不是安装程序。\
@@ -63,8 +63,8 @@ Microsoft.NETCore.App.Runtime.linux-loongarch64
 > 注意：
 >
 > 这三个目录下都有大量的符号链接，指向 `../shared/` 下的对应文件。\
-> 为了避免符号链接映射出错，建议复制为真实文件。\
-> - 对于 Windows 来说，直接使用资源管理器复制即可。\
+> 为了避免符号链接映射出错，建议复制为真实文件。
+> - 对于 Windows 来说，直接使用资源管理器复制即可。 
 > - 对于 Linux 来说，请给 cp 命令加 -L 参数，如 `cp -r -L Microsoft.AspNetCore.App.Runtime.linux-loongarch64 ~/dotnet-cross/packs`。
 
 - 由于 .NET 8 上游并没有加入 `linux-loongarch64` 运行时包声明，所以需要补充。
