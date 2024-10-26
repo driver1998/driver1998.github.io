@@ -133,7 +133,7 @@ D:\Projects\website\bin\Release\net8.0\linux-loongarch64\publish>
 
 ### 新世界 .NET 9
 
-新世界 .NET 9 由 loongson-community 维护，目前版本是 .NET 9 RC1。可以在 https://github.com/loongson-community/dotnet-unofficial-build/releases 下载。
+新世界 .NET 目前有 loongson-community 提供的二进制包，当前版本是 .NET 9 RC1。可以在 https://github.com/loongson-community/dotnet-unofficial-build/releases 下载。
 
 提取过程与 .NET 8 基本相当，但 .NET 9 已经加入了对应的运行时包声明，无需修改 `Microsoft.NETCoreSdk.BundledVersions.props`。
 
