@@ -2,7 +2,6 @@
 title = '在高通 Windows 设备上实现 FFmpeg 硬件视频编码'
 date = 2025-04-23T00:14:00+08:00
 categories = ['Windows', 'ARM64', 'FFmpeg']
-draft = true
 +++
 
 高通 Windows ARM64 平台，如骁龙 8cx 和骁龙 X Elite 等，只提供了基于 Media Foundation 的硬件编码器，并没有提供更底层的硬件编码 API，像 Intel 的 QSV、AMD 的 AMF 以及 NVIDIA 的 NVENC 等。那么，我们到底应该怎么调用高通的硬件编码器呢？
