@@ -1,5 +1,5 @@
 +++
-title = '在高通 Windows 设备上实现 FFmpeg 硬件视频编码'
+title = '在高通 Windows 设备上调用硬件视频编码'
 date = 2025-04-23T00:14:00+08:00
 categories = ['Windows', 'ARM64', 'FFmpeg']
 +++
