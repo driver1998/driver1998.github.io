@@ -1,6 +1,6 @@
 +++
 title = '.NET Framework 应用在 Windows ARM64 上的化学反应'
-date = 2024-05-23T00:22:48+08:00
+date = 2025-04-23T11:22:48+08:00
 categories = ['Windows', 'ARM64', '.NET']
 +++
 
@@ -54,7 +54,29 @@ PS2: 如果你不需要 AnyCPU 带来的便利，直接将构建目标改成 ARM
 
 微软一刀切之后，怎么让你的 AnyCPU 程序继续能 AnyCPU，在所有机器上都能原生运行呢？
 
-很可惜，目前并没有十分完美的方案。
+### 在清单文件中声明支持的架构
+
+微软在 Windows 11 24H2 上提供了完美解决方案：
+
+在 EXE 的清单文件中添加 [`supportedArchitectures` 声明](https://learn.microsoft.com/zh-cn/windows/win32/sbscs/application-manifests#supportedarchitectures)，即可向系统明确报告应用支持的所有架构。
+
+```xml
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3">
+ ...
+  <asmv3:application>
+    <asmv3:windowsSettings xmlns="http://schemas.microsoft.com/SMI/2024/WindowsSettings">
+      <supportedArchitectures>amd64 arm64</supportedArchitectures>
+    </asmv3:windowsSettings>
+  </asmv3:application>
+ ...
+</assembly>
+```
+
+`supportedArchitectures` 支持的取值有 `amd64`、`arm64` 以及它们的组合（以空格分隔），一般全填上就行（应该没有谁说不支持 x64 吧）。
+
+这一设计确保哪怕未来 .NET Framework 继续引入新架构支持（比如 RISC-V？），也可以很自然地扩展，不用像 `AnyCPU`、`AnyCPU32BitPreferred` 一样模棱两可。
+
+只可惜这一方案出现得太晚了，只有 24H2 (26100) 才开始支持。如果你需要支持更老的系统版本，只能使用下面的方法，可惜没有完美的。
 
 ### 使用 CMD 的 `start` 命令
 
@@ -163,27 +185,3 @@ int main(void) {
 ![IFEO 成功强制让进程以 ARM64 运行](ifeo-it-works.png)
 
 当然这个方法需要修改注册表，而且这个注册表位置也挺敏感的，可能会被杀毒软件警告。
-
-### 在清单文件中声明支持的架构
-
-以上方案都有不少缺点，为此，微软最终在 Windows 11 24H2 上提供了完美解决方案：
-
-在 EXE 的清单文件中添加 [`supportedArchitectures` 声明](https://learn.microsoft.com/zh-cn/windows/win32/sbscs/application-manifests#supportedarchitectures)，即可向系统明确报告应用支持的所有架构。
-
-```xml
-<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3">
- ...
-  <asmv3:application>
-    <asmv3:windowsSettings xmlns="http://schemas.microsoft.com/SMI/2024/WindowsSettings">
-      <supportedArchitectures>amd64 arm64</supportedArchitectures>
-    </asmv3:windowsSettings>
-  </asmv3:application>
- ...
-</assembly>
-```
-
-`supportedArchitectures` 支持的取值有 `amd64`、`arm64` 以及它们的组合（以空格分隔），一般全填上就行（应该没有谁说不支持 x64 吧）。
-
-这一设计确保哪怕未来 .NET Framework 继续引入新架构支持（比如 RISC-V？），也可以很自然地扩展，不用像 `AnyCPU`、`AnyCPU32BitPreferred` 一样模棱两可。
-
-只可惜这一方案出现得太晚了，只有目前尚未正式发布的 24H2（26100）才开始支持，离能广泛使用还要等很长一段时间（还好 ARM 没有 LTSC）。
