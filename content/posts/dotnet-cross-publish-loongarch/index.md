@@ -30,7 +30,7 @@ dotnet publish -r linux-loongarch64 -p:UseAppHost=false
 
 但我们明白，`linux-loongarch64` 的运行时包是必然存在的，否则在 LoongArch 设备上也无法正常打包。那我们能不能将对应的运行时包提取出来呢？
 
-答案是肯定的，而且其实非常简单。下面以旧世界（ABI1.0）的 .NET 8 与新世界（ABI2.0）的 .NET 9 RC 分别举例。
+答案是肯定的，而且其实非常简单。下面以旧世界（ABI1.0）的 .NET 8 与新世界（ABI2.0）的 .NET 9 分别举例。
 
 有关 LoongArch 的新旧世界问题，请参考 [咱龙了吗？](https://areweloongyet.com/) 网站的 [旧世界与新世界](https://areweloongyet.com/docs/old-and-new-worlds) 一文。
 
