@@ -10,7 +10,7 @@ categories = ['Windows', 'ARM64', 'FFmpeg']
 
 ## FFmpeg 命令行
 
-早在 2020 年，Martin Storsjö 就将 Media Foundation wrapper [传入 FFmpeg 上游](https://www.mail-archive.com/FFmpeg-devel@FFmpeg.org/msg102273.html)， 如今主流版本的 FFmpeg 都应该支持使用 Media Foundation 编码器。
+早在 2020 年，Martin Storsjö 就将 Media Foundation wrapper [传入 FFmpeg 上游](https://www.mail-archive.com/ffmpeg-devel@ffmpeg.org/msg102273.html)， 如今主流版本的 FFmpeg 都应该支持使用 Media Foundation 编码器。
 
 在 FFmpeg 中，使用 Media Foundation 的编码器分别为 `h264_mf` 和 `hevc_mf`，可惜当你直接使用时，会发现调用的是 `H264 Encoder MFT` 和 `HEVCVideoExtensionEncoder`，这是系统（以及 HEVC 视频扩展）所带的软件编码器。
 
