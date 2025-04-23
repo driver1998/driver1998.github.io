@@ -23,7 +23,7 @@ categories = ['Windows', 'ARM64', 'FFmpeg']
 
 示例如下：
 ```shell
-FFmpeg -i input.mov -c:v h264_mf -c:a copy -pix_fmt nv12 -hw_encoding true out.mp4
+ffmpeg -i input.mov -c:v h264_mf -c:a copy -pix_fmt nv12 -hw_encoding true out.mp4
 ```
 
 此时日志中会显示使用的是 `QCOM Hardware Encoder - H264` 或 `QCOM Hardware Encoder - HEVC`，即高通的硬件编码器。
