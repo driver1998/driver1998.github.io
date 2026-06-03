@@ -1,7 +1,7 @@
 +++
 title = 'Native Vulkan on Snapdragon 8cx'
 date = 2024-05-23T00:22:48+08:00
-categories = ['Windows', 'ARM64', 'Vulkan']
+categories = ['Qualcomm', 'Windows', 'ARM64', 'Vulkan']
 +++
 
 

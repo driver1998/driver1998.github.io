@@ -1,7 +1,7 @@
 +++
 title = '高通骁龙 8cx 上的原生 Vulkan'
 date = 2024-05-23T00:22:48+08:00
-categories = ['Windows', 'ARM64', 'Vulkan']
+categories = ['高通', 'Windows', 'ARM64', 'Vulkan']
 +++
 
 骁龙 X 系列终于发布了，新平台的 GPU 驱动终于包含对 Vulkan API 的原生支持。
