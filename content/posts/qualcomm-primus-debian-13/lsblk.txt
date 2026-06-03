@@ -1,0 +1,63 @@
+driver1998@PRIMUS-QC:~$ lsblk -o NAME,TYPE,SIZE,PARTLABEL,MOUNTPOINT
+NAME        TYPE   SIZE PARTLABEL                    MOUNTPOINT
+sda         disk     8M                              
+├─sda1      part   3.5M XBL                          
+└─sda2      part   128K XBL_CONFIG                   
+sdb         disk     8M                              
+├─sdb1      part   3.5M XBL                          
+└─sdb2      part   128K XBL_CONFIG                   
+sdc         disk 114.9G                              
+├─sdc1      part   300M EFI system partition         /boot/efi
+├─sdc2      part    16M Microsoft reserved partition 
+├─sdc3      part 112.6G Basic data partition         
+├─sdc4      part     1G Basic data partition         
+└─sdc5      part     1G                              /boot
+sdd         disk   128M                              
+├─sdd2      part   128K cdt                          
+└─sdd3      part     1M ddr                          
+sde         disk     4G                              
+├─sde1      part   320K DPP                          
+├─sde2      part     4K limits                       
+├─sde3      part   256K SSD                          
+├─sde4      part   128K SECDATA                      
+├─sde5      part   152K SMBIOS                       
+├─sde6      part    64K APDP                         
+├─sde7      part     2M PLAT                         
+├─sde8      part     1M ToolsFv                      
+├─sde9      part     1M ImageFv                      
+├─sde10     part   512K AOP                          
+├─sde11     part   3.5M TZ                           
+├─sde12     part   128K DEVCFG                       
+├─sde13     part   640K HYP                          
+├─sde14     part   128K QUP                          
+├─sde15     part     2M TZAPPS                       
+├─sde16     part    16M ADSP                         
+├─sde17     part    32K multiimgoem                  
+├─sde18     part    16M LogFs                        
+├─sde19     part     4K SYSFW_VERSION                
+├─sde20     part     1M EnterpriseFv                 
+├─sde21     part   320K BACKUP_DPP                   
+├─sde22     part   152K BACKUP_SMBIOS                
+├─sde23     part     2M BACKUP_PLAT                  
+├─sde24     part     1M BACKUP_ToolsFv               
+├─sde25     part     1M BACKUP_ImageFv               
+├─sde26     part   512K BACKUP_AOP                   
+├─sde27     part   3.5M BACKUP_TZ                    
+├─sde28     part   128K BACKUP_DEVCFG                
+├─sde29     part   640K BACKUP_HYP                   
+├─sde30     part   128K BACKUP_QUP                   
+├─sde31     part     2M BACKUP_TZAPPS                
+├─sde32     part    16M BACKUP_ADSP                  
+├─sde33     part    32K BACKUP_multiimgoem           
+├─sde34     part    70M UpdateCapsule                
+└─sde35     part   120M NHLOS                        
+sdf         disk   128M                              
+├─sdf2      part     2M modemst1                     
+├─sdf3      part     2M modemst2                     
+├─sdf4      part     2M fsg                          
+└─sdf5      part   128K fsc                          
+nvme0n1     disk 238.5G                              
+├─nvme0n1p1 part   150G Basic data partition         
+├─nvme0n1p2 part   8.1G                              [SWAP]
+└─nvme0n1p3 part  80.4G                              /
+driver1998@PRIMUS-QC:~$
