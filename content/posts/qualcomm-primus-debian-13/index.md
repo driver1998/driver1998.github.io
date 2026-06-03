@@ -135,9 +135,9 @@ devicetree (hd6,msdos1)/sc8180x-primus.dtb
 
 最后运行 `sudo update-initramfs -u` 重新生成 initramfs。
 
-重启，在 Grub 下尝试去掉 ` modprobe.blacklist=msm,dispcc_sm8250 video=efifb` 这几个内核参数启动。
+重启，在 Grub 下尝试去掉 ` modprobe.blacklist=msm,dispcc_sm8250 nomodeset` 这几个内核参数启动。
 
-如果没问题的话就可以修改 `/etc/default/grub` 将 `GRUB_CMDLINE_LINUX_DEFAULT` 中的 ` modprobe.blacklist=msm,dispcc_sm8250 video=efifb` 去掉了。去掉之后别忘了执行 `sudo update-grub` 更新 Grub 菜单。
+如果没问题的话就可以修改 `/etc/default/grub` 将 `GRUB_CMDLINE_LINUX_DEFAULT` 中的 ` modprobe.blacklist=msm,dispcc_sm8250 nomodeset` 去掉了。去掉之后别忘了执行 `sudo update-grub` 更新 Grub 菜单。
 
 ### WiFi & 蓝牙
 
