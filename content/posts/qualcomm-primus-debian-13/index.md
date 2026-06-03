@@ -93,7 +93,7 @@ pd_ignore_unused clk_ignore_unused efi=novamap modprobe.blacklist=msm,dispcc_sm8
 
 ### 第一次启动
 
-Primus 的 efivars 工作不太正常（高通平台上 efivars 是模拟出来的，Linux 对这个的支持还不太完善），所以安装时写入的 EFI 启动项不一定能生效。必要时请进入 EFI Shell （电源下+开机键进入 BDS Menu,然后选择 Enter Shell）手动运行 /efi/debian/grubaa64.efi。
+Primus 的 efivars 工作不太正常（高通平台上 efivars 是模拟出来的，Linux 对这个的支持还不太完善），所以安装时写入的 EFI 启动项不一定能生效。必要时请进入 EFI Shell （音量上 + 开机键进入 BDS Menu，然后选择 Enter Shell）手动运行 /efi/debian/grubaa64.efi。
 
 进入 Grub 之后，一样按 c 进命令行加载 devicetree
 
