@@ -30,7 +30,7 @@ ffmpeg -i input.mov -c:v h264_mf -c:a copy -pix_fmt nv12 -hw_encoding true out.m
 
 ![正确调用硬件编码器](image-2.png)
 
-最新的骁龙 X 系列支持 AV1 硬件编码，但 FFmpeg 暂未支持 Media Foundation 上的 AV1 编码器，所以目前无法通过 FFmpeg 调用。
+最新的骁龙 X 系列支持 AV1 硬件编码，FFmpeg 下对应的名字是 `av1_mf`。但我没有骁龙 X 的设备，就没办法为大家测试了，参数应该是差不多的。
 
 ## OBS Studio
 
