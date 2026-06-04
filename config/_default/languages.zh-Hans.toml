@@ -17,6 +17,7 @@ name = "driver1998"
 headline = "It works, what now?"
 links = [
   { email = "mailto:driver1998.ms@outlook.com" },
+  { zhihu = "https://www.zhihu.com/people/chu-sheng-zhi-niao" },
   { bilibili = "https://space.bilibili.com/102484203" },
   { github = "https://github.com/driver1998" },
   { x-twitter = "https://twitter.com/driver1998" },
