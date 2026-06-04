@@ -1,7 +1,7 @@
 +++
 title = '.NET Framework 应用在 Windows ARM64 上的化学反应'
 date = 2025-04-23T11:22:48+08:00
-categories = ['Windows', 'ARM64', '.NET']
+categories = ['Windows', 'ARM64', 'dotnet']
 +++
 
 在微软一再拒绝移植之后 ~~（过时技术警告）~~，.NET Framework 4.8.1 终于提供了官方的原生 ARM64 支持。

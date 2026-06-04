@@ -1,7 +1,7 @@
 +++
 title = '移花接木 —— 在其它平台上为 LoongArch 架构打包 .NET 程序'
 date = 2024-10-27T03:41:25+08:00
-categories = ['.NET', '龙芯', 'LoongArch']
+categories = ['dotnet', '龙芯', 'LoongArch']
 +++
 
 龙芯为 LoongArch 架构移植了 .NET 运行时，让 LoongArch 设备运行 .NET 程序成为了可能。
