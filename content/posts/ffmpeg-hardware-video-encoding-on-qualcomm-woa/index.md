@@ -34,7 +34,7 @@ ffmpeg -i input.mov -c:v h264_mf -c:a copy -pix_fmt nv12 -hw_encoding true out.m
 
 ## OBS Studio
 
-OBS Studio 的 Windows ARM64 支持已经基本完成，目前可以从其 [GitHub Actions](https://github.com/obsproject/obs-studio/actions/workflows/scheduled.yaml) 中下载到每日构建的测试版本。
+OBS Studio 的 Windows ARM64 支持已经基本完成，目前可以从 [GitHub Releases](https://github.com/obsproject/obs-studio/releases) 中下载。
 
 要在 OBS Studio 中使用高通的硬件编码，暂时需要以下配置：
 
